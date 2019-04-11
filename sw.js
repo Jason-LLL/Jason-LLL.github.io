@@ -82,7 +82,7 @@ self.addEventListener('fetch',function(e){
                 return cache.delete(e.request);
             })
             .then(function(){
-                caches.put(e.request,responseClone );
+                cache.put(e.request,responseClone );
             })
             return httpRes;
         })
