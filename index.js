@@ -80,7 +80,7 @@
              console.log('sw注册成功');
         });
     }
-    $(window).on('offline', function() {
+    window.addEventListene('offline', function() {
       Notification.requestPermission().then(function(grant){
           if(grant !== 'grant'){
              return;
