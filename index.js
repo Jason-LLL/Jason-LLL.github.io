@@ -82,7 +82,7 @@
     }
     window.addEventListener('offline', function() {
       Notification.requestPermission().then(function(grant){
-          if(grant !== 'grant'){
+          if(grant !== 'granted'){
              return;
           }
           var notification = new Notification("Hi，网络不给力哟", {
