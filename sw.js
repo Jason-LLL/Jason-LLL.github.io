@@ -92,14 +92,17 @@ self.addEventListener('fetch',function(e){
         })
     )
 })
-self.addEventListener('beforeinstallprompt',function(e){
-    e.userChoice.then(function(choiceResult){
-        if (choiceResult === 'dismissed') {
-           console.log('用户拒绝')
-        }
-        else {
-            console.log('用户安装');
-        }
-    })})
+
+self.addEventListener('push',function(e){
+    var data = e.data;
+    if(e.data){
+        data = data.json();
+        console.log('push的数据为',data);
+        self.registration.showNotification(data.text);
+    }
+    else{
+        console.log('push没有任何数据');
+    }
+})
 
 
