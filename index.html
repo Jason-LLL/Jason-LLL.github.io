@@ -23,10 +23,10 @@
  window.addEventListener('beforeinstallprompt',function(e){
      e.userChoice.then(function(choiceResult){
          if (choiceResult === 'dismissed') {
-             alert('用户取消');
+            console.log('用户拒绝')
          }
          else {
-             alert('用户安装');
+             console.log('用户安装');
          }
      })});
 </script>
