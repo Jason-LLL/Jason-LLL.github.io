@@ -92,8 +92,7 @@ self.addEventListener('fetch',function(e){
         })
     )
 })
-
-window.addEventListener('beforeinstallprompt',function(e){
+self.addEventListener('beforeinstallprompt',function(e){
     e.userChoice.then(function(choiceResult){
         if (choiceResult === 'dismissed') {
            console.log('用户拒绝')
